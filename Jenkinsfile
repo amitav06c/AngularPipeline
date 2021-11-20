@@ -56,11 +56,15 @@
 // }
 
 pipeline {
-    agent {
-        docker { image 'node:10-alpine' }
-    }
+  agent any
+   tools {nodejs "nodejs"}
     stages {
-        stage('Restore') {
+           stage('Example') {
+      steps {
+        sh 'npm config ls'
+      }
+    }
+       stage('Restore') {
             steps {
                 sh 'npm install'
             }
