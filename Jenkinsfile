@@ -1,5 +1,13 @@
 pipeline {
-      agent any
+   agent { label 'nodejs8' }
+   stages{
+    stage ('checkout'){
+      steps{
+        checkout scm
+      }
+    }
+
+//       agent any
 //       agent {
 //         docker { image 'node:latest' }
 //   }
@@ -24,10 +32,10 @@ pipeline {
 //                }
 //             }
 //     }
-  stages {
-    stage('Install') {
-      steps { sh 'npm install' }
-    }
+//   stages {
+//     stage('Install') {
+//       steps { sh 'npm install' }
+//     }
 
 //     stage('Test') {
 //       parallel {
