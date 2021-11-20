@@ -17,7 +17,7 @@ pipeline {
       stage('Install') {
         steps {
           echo 'Trying to install NG dependency....!!!!!'
-          sh 'npm install' 
+          sh "npm install" 
                }
             }
     }
