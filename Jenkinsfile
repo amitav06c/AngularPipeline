@@ -72,8 +72,7 @@ pipeline {
                    sh 'npm run'
                    echo 'Npm Run competed....!!!!!'
                    echo "Current workspace is $WORKSPACE"
-                   def foo = sh(script: 'pwd', returnStdout: true)
-                   println(foo)
+                   println(WORKSPACE)
             }
         }            
     }
