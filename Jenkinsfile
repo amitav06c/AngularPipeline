@@ -3,7 +3,7 @@ pipeline {
     docker { image 'node:latest' }
   }
 
-    stages {
+//     stages {
 
    //   stage('Checkout external proj') {
 //         steps {
@@ -16,11 +16,32 @@ pipeline {
 //                }
 //             }
 
-      stage('Install') {
-        steps {
-          echo 'Trying to install NG dependency....!!!!!'
-          sh "npm install" 
-               }
-            }
+//       stage('Install') {
+//         steps {
+//           echo 'Trying to install NG dependency....!!!!!'
+//           sh "npm install" 
+//                }
+//             }
+//     }
+  stages {
+    stage('Install') {
+      steps { sh 'npm install' }
     }
+
+    stage('Test') {
+      parallel {
+        stage('Static code analysis') {
+            steps { sh 'npm run-script lint' }
+        }
+        stage('Unit tests') {
+            steps { sh 'npm run-script test' }
+        }
+      }
+    }
+
+    stage('Build') {
+      steps { sh 'npm run-script build' }
+    }
+  }
+}
 }
