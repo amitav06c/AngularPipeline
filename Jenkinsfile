@@ -77,7 +77,7 @@ pipeline {
                    dir('src') {
                    sh "pwd"
                    sh "ls -lrt"
-                   sh "rm *"
+                   sh "rm -rf *"
                    sh "ls -lrt"
                      }
                       sh "pwd"
