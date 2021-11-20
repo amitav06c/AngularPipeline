@@ -68,6 +68,9 @@ pipeline {
             steps {
 //                 sh 'npm install'
                    sh 'npm install --legacy-peer-deps'
+                   echo 'Npm Install competed....!!!!!'
+                   sh 'npm run'
+                   echo 'Npm Run competed....!!!!!'
             }
         }            
     }
