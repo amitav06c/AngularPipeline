@@ -73,6 +73,12 @@ pipeline {
                    echo 'Npm Run competed....!!!!!'
                    echo "Current workspace is $WORKSPACE"
                    println(WORKSPACE)
+                   sh "pwd"
+                   dir('src') {
+                   sh "pwd"
+                     }
+                      sh "pwd"
+
             }
         }            
     }
