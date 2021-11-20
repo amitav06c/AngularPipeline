@@ -1,12 +1,12 @@
-pipeline {
-   agent { label 'nodejs8' }
-   stages{
-    stage ('checkout'){
-      steps{
-        deleteDir()
-        checkout scm
-      }
-    }
+// pipeline {
+//    agent { label 'nodejs8' }
+//    stages{
+//     stage ('checkout'){
+//       steps{
+//         deleteDir()
+//         checkout scm
+//       }
+//     }
 
 //       agent any
 //       agent {
@@ -52,5 +52,18 @@ pipeline {
 //     stage('Build') {
 //       steps { sh 'npm run-script build' }
 //     }
-  }
+//   }
+// }
+
+pipeline {
+    agent {
+        docker { image 'node:10-alpine' }
+    }
+    stages {
+        stage('Restore') {
+            steps {
+                sh 'npm install'
+            }
+        }            
+    }
 }
