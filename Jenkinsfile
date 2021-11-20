@@ -11,6 +11,7 @@ pipeline {
                 url: 'ssh://git@github.com/amitav06c/AngularPipeline.git'
 
             sh "ls -lat"
+               }
+            }
         }
-    }
 }
