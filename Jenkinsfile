@@ -7,7 +7,7 @@ pipeline {
         steps {
             echo 'Trying to checkoutfrom remote....!!!!!'
             git branch: '*/main',
-                credentialsId: 'my_cred_id',
+                credentialsId: 'Personal MacBook Air',
                 url: 'ssh://git@github.com/amitav06c/AngularPipeline.git'
 
             sh "ls -lat"
