@@ -72,6 +72,8 @@ pipeline {
                    sh 'npm run'
                    echo 'Npm Run competed....!!!!!'
                    echo "Current workspace is $WORKSPACE"
+                   echo dir
+                   sh 'cd src'
             }
         }            
     }
