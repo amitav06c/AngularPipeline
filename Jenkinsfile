@@ -1,7 +1,8 @@
 pipeline {
-      agent {
-        docker { image 'node:latest' }
-  }
+      agent any
+//       agent {
+//         docker { image 'node:latest' }
+//   }
 
 //     stages {
 
@@ -28,19 +29,19 @@ pipeline {
       steps { sh 'npm install' }
     }
 
-    stage('Test') {
-      parallel {
-        stage('Static code analysis') {
-            steps { sh 'npm run-script lint' }
-        }
-        stage('Unit tests') {
-            steps { sh 'npm run-script test' }
-        }
-      }
-    }
+//     stage('Test') {
+//       parallel {
+//         stage('Static code analysis') {
+//             steps { sh 'npm run-script lint' }
+//         }
+//         stage('Unit tests') {
+//             steps { sh 'npm run-script test' }
+//         }
+//       }
+//     }
 
-    stage('Build') {
-      steps { sh 'npm run-script build' }
-    }
-  }
+//     stage('Build') {
+//       steps { sh 'npm run-script build' }
+//     }
+//   }
 }
