@@ -7,7 +7,7 @@ pipeline {
         steps {
             git branch: '*/master',
                 credentialsId: 'my_cred_id',
-                url: 'ssh://git@github.com:amitav06c/sampleDemo.git'
+                url: 'ssh://git@github.com/amitav06c/AngularPipeline.git'
 
             sh "ls -lat"
         }
