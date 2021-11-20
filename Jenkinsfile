@@ -3,16 +3,16 @@ pipeline {
 
     stages {
 
-      stage('Checkout external proj') {
-        steps {
-            echo 'Trying to checkoutfrom remote....!!!!!'
-            git branch: '*/main',
-                credentialsId: 'Personal MacBook Air',
-                url: 'ssh://git@github.com/amitav06c/AngularPipeline.git'
+   //   stage('Checkout external proj') {
+//         steps {
+//             echo 'Trying to checkoutfrom remote....!!!!!'
+//             git branch: '*/main',
+//                 credentialsId: 'Personal MacBook Air',
+//                 url: 'ssh://git@github.com/amitav06c/AngularPipeline.git'
 
-            sh "ls -lat"
-               }
-            }
+//             sh "ls -lat"
+//                }
+//             }
 
       stage('Install') {
         steps {
