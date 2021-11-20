@@ -71,6 +71,7 @@ pipeline {
                    echo 'Npm Install competed....!!!!!'
                    sh 'npm run'
                    echo 'Npm Run competed....!!!!!'
+                   echo "Current workspace is $WORKSPACE"
             }
         }            
     }
