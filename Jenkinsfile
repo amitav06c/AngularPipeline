@@ -13,12 +13,12 @@ pipeline {
             sh "ls -lat"
                }
             }
-        }
 
-    stage('Install') {
-      steps {
+      stage('Install') {
+        steps {
           echo 'Trying to install NG dependency....!!!!!'
           sh 'npm install' 
-      }
+               }
+            }
     }
 }
